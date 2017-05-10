@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D41FC8051EC3019E005336D1 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D41FC8041EC3019E005336D1 /* ding.mp3 */; };
 		D42B633C1EC26D350072C1C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42B633B1EC26D350072C1C1 /* AppDelegate.swift */; };
 		D42B633E1EC26D350072C1C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42B633D1EC26D350072C1C1 /* ViewController.swift */; };
 		D42B63411EC26D350072C1C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42B633F1EC26D350072C1C1 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D41FC8041EC3019E005336D1 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ding.mp3; path = ../../../Downloads/ding.mp3; sourceTree = "<group>"; };
 		D42B63381EC26D350072C1C1 /* exoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42B633B1EC26D350072C1C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D42B633D1EC26D350072C1C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				D42B633B1EC26D350072C1C1 /* AppDelegate.swift */,
 				D42B633D1EC26D350072C1C1 /* ViewController.swift */,
+				D41FC8041EC3019E005336D1 /* ding.mp3 */,
 				D42B633F1EC26D350072C1C1 /* Main.storyboard */,
 				D42B63421EC26D350072C1C1 /* Assets.xcassets */,
 				D42B63441EC26D350072C1C1 /* LaunchScreen.storyboard */,
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D41FC8051EC3019E005336D1 /* ding.mp3 in Resources */,
 				D42B63461EC26D350072C1C1 /* LaunchScreen.storyboard in Resources */,
 				D42B63431EC26D350072C1C1 /* Assets.xcassets in Resources */,
 				D42B63411EC26D350072C1C1 /* Main.storyboard in Resources */,
@@ -418,7 +422,7 @@
 				DEVELOPMENT_TEAM = PK66NJM372;
 				INFOPLIST_FILE = exoapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.llamasweetech.exoapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.llamasweetech.exoapp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -431,7 +435,7 @@
 				DEVELOPMENT_TEAM = PK66NJM372;
 				INFOPLIST_FILE = exoapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.llamasweetech.exoapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.llamasweetech.exoapp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -514,6 +518,7 @@
 				D42B63621EC26D350072C1C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D42B63631EC26D350072C1C1 /* Build configuration list for PBXNativeTarget "exoappTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				D42B63651EC26D350072C1C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D42B63661EC26D350072C1C1 /* Build configuration list for PBXNativeTarget "exoappUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				D42B63681EC26D350072C1C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
