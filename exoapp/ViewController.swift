@@ -23,7 +23,8 @@ class ViewController: UIViewController {
         stepper.wraps = true
         stepper.autorepeat = true
         stepper.maximumValue = 100
-        
+        stepper.value = Double(GlobalVariables.repetition);
+        valueLabel.text = String(GlobalVariables.repetition);
         timeLabel.text = String(counter)
         pauseButton.isEnabled = false
     }
@@ -37,19 +38,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var playedTimeValue: UILabel!
+    
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         valueLabel.text = Int(sender.value).description
+        GlobalVariables.repetition = Int(sender.value)
     }
     
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
-
+    
     @IBAction func startTimer(_ sender: Any) {
         if(isPlaying) {
             return
         }
+        UIApplication.shared.isIdleTimerDisabled = true
         startButton.isEnabled = false
         pauseButton.isEnabled = true
         
@@ -68,8 +72,9 @@ class ViewController: UIViewController {
         playedTimeValue.text = "\(playedtime)"
         timeLabel.text = String(counter)
     }
+    
     func playSound() {
-        let url = Bundle.main.url(forResource: "ding", withExtension: "mp3")!
+        let url = Bundle.main.url(forResource: GlobalVariables.sound, withExtension: "mp3")!
         
         do {
             player = try AVAudioPlayer(contentsOf: url)
@@ -81,21 +86,42 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    @IBAction func settingsButton(_ sender: UIButton) {
+        startButton.isEnabled = true
+        pauseButton.isEnabled = false
+        
+        timer.invalidate()
+        isPlaying = false
+        counter = 0.0
+        playedtime = 0
+        playedTimeValue.text = "\(playedtime)"
+        timeLabel.text = String(counter)
+    }
     
     func UpdateTimer() {
-        if playedtime <= Int(valueLabel.text!)!*2{
-            if counter < 10.0  {
+        if playedtime <= Int(valueLabel.text!)!*GlobalVariables.nbofleg{
+            if counter <= GlobalVariables.nbofsec  {
                 counter = counter + 0.1
                 timeLabel.text = String(format: "%.1f", counter)
             }else{
                 counter = 0
-                playedTimeValue.text = "\(playedtime/2)"
+                playedTimeValue.text = "\(playedtime/GlobalVariables.nbofleg)"
+                if playedtime == Int(valueLabel.text!)!*GlobalVariables.nbofleg{
+                    let tmp = GlobalVariables.sound
+                    GlobalVariables.sound = "complete"
+                    playSound()
+                    GlobalVariables.sound = tmp
+                    timer.invalidate()
+                    playedtime=0
+                }else{
+                    playSound()
+                }
                 playedtime+=1
-                playSound()
                 timeLabel.text = String(format: "%.1f", counter)
+
             }
-            
         }
+        
     }
 }
 
